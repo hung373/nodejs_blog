@@ -6,6 +6,10 @@ const app = express();
 const port = 3000;
 
 const router = require('./routes/');
+
+const db = require('./config/db');
+//connect to db
+db.connect();
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(
@@ -24,7 +28,7 @@ app.use(morgan('combined'));
         extname: '.hbs',
     }),
 );
-app.set('view engine', 'hbs');
+    app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'resources/views'));
 //route init
 router(app);

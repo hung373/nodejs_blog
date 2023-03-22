@@ -1,7 +1,17 @@
+const Course = require('../models/Course')
+const {mutipleMongooseToObject} = require('../../util/mongoose');
 class SiteController {
     //[get]/
-    index(req, res) {
-        res.render('home');
+    index(req, res,next) {
+        Course.find({})
+        .then(courses  => {
+            res.render('home', {
+                courses: mutipleMongooseToObject(courses)
+            });
+        })
+        .catch(next);
+        
+        // res.render('home');
     }
     //[get]/ search
     search(req, res) {

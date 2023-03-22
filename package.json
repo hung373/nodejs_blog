@@ -23,11 +23,13 @@
   "lint-staged": {
     "src/**/*.{js,json,scss}": "prettier --single-quote --trailing-comma all --tab-width 4 --write"
   },
-  
   "dependencies": {
     "express": "^4.18.2",
     "express-handlebars": "^6.0.7",
     "express-load": "^1.1.16",
+    "handlebars": "^4.5.0",
+    "mongoose": "^7.0.2",
+    "mongoose-slug-generator": "^1.0.4",
     "node-sass": "^8.0.0",
     "sass": "^1.59.3"
   },
