@@ -3,7 +3,8 @@ const mongoose = require('mongoose');
 async function connect() {
     mongoose.connect("mongodb://localhost/f8_education_dev", {
         useNewUrlParser: true,
-        useUnifiedTopology: true
+        useUnifiedTopology: true,
+        
     })
     mongoose.connection
         .once('open', () => console.log('Connected successfuly!!!'))
